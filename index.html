@@ -236,6 +236,55 @@
   }
   .log-text{ color: var(--bone-dim); }
 
+  /* ===== feedback form ===== */
+  .feedback-panel{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--rust);
+    padding: 22px 24px;
+  }
+  .feedback-panel label{
+    display:block;
+    font-size: 12px;
+    color: var(--olive);
+    margin-bottom: 6px;
+  }
+  .feedback-panel input,
+  .feedback-panel textarea{
+    width: 100%;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--bone);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  .feedback-panel input:focus,
+  .feedback-panel textarea:focus{
+    outline: none;
+    border-color: var(--olive);
+  }
+  .feedback-submit{
+    background: transparent;
+    border: 1px solid var(--rust);
+    color: var(--rust);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .feedback-submit:hover{
+    background: var(--rust);
+    color: var(--bone);
+  }
+  .feedback-note{
+    font-size: 12px;
+    color: var(--bone-dim);
+    margin-top: 14px;
+  }
+
   footer{
     padding: 36px 0 56px;
     font-size: 12px;
@@ -272,6 +321,7 @@
     <a href="#info">Информация о проектах</a>
     <a href="#team">Разработчик и команда</a>
     <a href="#news">Новости</a>
+    <a href="#feedback">Отзывы/идеи</a>
   </nav>
 
   <section id="projects">
@@ -352,6 +402,26 @@
     <div class="log-entry">
       <span class="log-date">АРХИВ</span>
       <span class="log-text">Опубликована демо-версия квеста «Не доброе утро».</span>
+    </div>
+  </section>
+
+  <section id="feedback">
+    <div class="section-head">
+      <span class="section-num">05</span>
+      <h2>Отзывы / идеи</h2>
+    </div>
+
+    <div class="feedback-panel">
+      <form action="https://formspree.io/f/xeaoprlr" method="POST">
+        <label for="fb-name">Имя (необязательно)</label>
+        <input type="text" id="fb-name" name="name" placeholder="Как к тебе обращаться">
+
+        <label for="fb-message">Сообщение</label>
+        <textarea id="fb-message" name="message" rows="5" placeholder="Отзыв, идея, замечание по проекту..." required></textarea>
+
+        <button type="submit" class="feedback-submit">Отправить</button>
+      </form>
+      <p class="feedback-note">Сообщения приходят прямо разработчику студии.</p>
     </div>
   </section>
 
